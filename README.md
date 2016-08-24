@@ -14,22 +14,17 @@ Check current runtime status/deploymnet status of a application:
   A deployment represents anything that can be deployed:
   Such as EJB-JAR, WAR, EAR, any kind of standard archive such as RAR or JBoss-specific deployment)
 
-**check-jvm-heap-pcnt**
+**check-jvm-memory-pcnt**
 
-Check the percentage of JVM HEAP Memory
-
-**check-jvm-non-heap-pcnt**
-
-Check the perentage of JVM Non-HEAP Memory
+Check the percentage of JVM HEAP or NonHEAP Memory against a warning/critical threshold
 
 **check-joloki-key**
 
-Check against a sepcified jolokia key and alert on a critical/warning threshold
+Check against a sepcified jolokia key and alert on a warning/critical threshold
 
 ## Files
  * check-java-app-deployment.rb
- * check-jvm-heap-pcnt.rb
- * check-non-jvm-heap-pcnt.rb
+ * check-jvm-memory-pcnt.rb
  * check-jolokia-key.rb
 
 ## Usage

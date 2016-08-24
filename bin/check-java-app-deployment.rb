@@ -11,8 +11,8 @@ require 'jolokia'
 # OUTPUT:
 #   plain text
 #
-#  Possible status modes are OK, FAILED, and STOPPED. 
-#    FAILED indicates a dependency is missing or a service could not start. 
+#  Possible status modes are OK, FAILED, and STOPPED.
+#    FAILED indicates a dependency is missing or a service could not start.
 #    STOPPED indicates that the deployment was not enabled or was manually stopped."
 #
 # PLATFORMS:
@@ -31,17 +31,16 @@ require 'jolokia'
 
 class CheckJavaAppDeploymnet < Sensu::Plugin::Check::CLI
   option :url,
-    description: 'URL of the Jolokia Agent to the constructor for creating the client',
-    short: '-u URL',
-    long: '--url URL',
-    default: 'http://localhost:8080/jolokia'
+         description: 'URL of the Jolokia Agent to the constructor for creating the client',
+         short: '-u URL',
+         long: '--url URL',
+         default: 'http://localhost:8080/jolokia'
 
   option :apps,
-    description: 'A comma seperated list of application paths to verify are in a OK state',
-    short: '-a VALUE',
-    long: '--applications VALUE',
-    required: true
-
+         description: 'A comma seperated list of application paths to verify are in a OK state',
+         short: '-a VALUE',
+         long: '--applications VALUE',
+         required: true
 
   def run
     # Create an instance of Jolokia::Client to comunicate with the Jolokia Agent
@@ -49,22 +48,21 @@ class CheckJavaAppDeploymnet < Sensu::Plugin::Check::CLI
     jolokia = Jolokia.new(url: config[:url])
 
     # Create array from apps option
-    apps = config[:apps].split(",")
+    apps = config[:apps].split(',')
 
     # Empty array for app status
-    #apps_with_errors ||= []
-    apps_with_errors = Array.new
+    apps_with_errors = []
 
-    for app in apps
+    apps.each do
       # Perform actions read or execute the operations of the MBeans
       begin
         jolokia_response = jolokia.request(
           :post,
-          type: "read",
+          type: 'read',
           mbean: "jboss.as:deployment=#{app}",
-          attribute: "status",
+          attribute: 'status'
         )
-      rescue Exception => e
+      rescue StandardError => e
         puts ''
         unknown e.message
       end
@@ -79,7 +77,5 @@ class CheckJavaAppDeploymnet < Sensu::Plugin::Check::CLI
     else
       ok "The applications #{apps} are deployed"
     end
-
   end
-
 end
