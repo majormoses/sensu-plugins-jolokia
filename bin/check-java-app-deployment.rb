@@ -53,7 +53,7 @@ class CheckJavaAppDeploymnet < Sensu::Plugin::Check::CLI
     # Empty array for app status
     apps_with_errors = []
 
-    apps.each do
+    apps.each do |app|
       # Perform actions read or execute the operations of the MBeans
       begin
         jolokia_response = jolokia.request(
