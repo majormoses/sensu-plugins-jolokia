@@ -1,10 +1,10 @@
 ## sensu-plugins-jolokia
 
-[![Build Status](https://travis-ci.org/smbambling/sensu-plugins-jolokia.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-jolokia)
+[![Build Status](https://travis-ci.org/arineng/sensu-plugins-jolokia.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-jolokia)
 [![Gem Version](https://badge.fury.io/rb/sensu-plugins-jolokia.svg)](http://badge.fury.io/rb/sensu-plugins-jolokia)
-[![Code Climate](https://codeclimate.com/github/smbambling/sensu-plugins-jolokia/badges/gpa.svg)](https://codeclimate.com/github/smbambling/sensu-plugins-jolokia)
-[![Test Coverage](https://codeclimate.com/github/smbambling/sensu-plugins-jolokia/badges/coverage.svg)](https://codeclimate.com/github/smbambling/sensu-plugins-jolokia)
-[![Dependency Status](https://gemnasium.com/smbambling/sensu-plugins-jolokia.svg)](https://gemnasium.com/smbambling/sensu-plugins-jolokia)
+[![Code Climate](https://codeclimate.com/github/arineng/sensu-plugins-jolokia/badges/gpa.svg)](https://codeclimate.com/github/arineng/sensu-plugins-jolokia)
+[![Test Coverage](https://codeclimate.com/github/arineng/sensu-plugins-jolokia/badges/coverage.svg)](https://codeclimate.com/github/arineng/sensu-plugins-jolokia)
+[![Dependency Status](https://gemnasium.com/arineng/sensu-plugins-jolokia.svg)](https://gemnasium.com/arineng/sensu-plugins-jolokia)
 
 ## Functionality
 
