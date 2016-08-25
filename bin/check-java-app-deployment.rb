@@ -48,7 +48,7 @@ class CheckJavaAppDeploymnet < Sensu::Plugin::Check::CLI
     jolokia = Jolokia.new(url: config[:url])
 
     # Create array from apps option
-    apps = config[:apps].split(',')
+    apps = config[:apps].gsub(/\s+/, '').split(',')
 
     # Empty array for app status
     apps_with_errors = []
