@@ -82,9 +82,9 @@ class CheckJvmMemoryPcnt < Sensu::Plugin::Check::CLI
     used = (jolokia_response['value']['used'])
     pct_used = (used.to_f / max.to_f * 100).to_i
 
-    if pct_committed > config[:crit].to_i
+    if pct_used > config[:crit].to_i
       critical "Java #{config[:type].upcase} Memory: Committed #{pct_committed}%, Used #{pct_used}%"
-    elsif pct_committed > config[:warn].to_i
+    elsif pct_used > config[:warn].to_i
       warning "Java #{config[:type].upcase} Memory: Committed #{pct_committed}%, Used #{pct_used}%"
     else
       ok "Java #{config[:type].upcase} Memory: Committed #{pct_committed}%, Used #{pct_used}%"
