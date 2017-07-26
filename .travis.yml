@@ -1,6 +1,8 @@
 language: ruby
 cache:
 - bundler
+before_install:
+  gem install bundler -v 1.15
 install:
 - bundle install
 rvm:
@@ -8,10 +10,12 @@ rvm:
 - 2.1
 - 2.2
 - 2.3.0
+- 2.4.1
 notifications:
   email:
     recipients:
-    - admin@arin.net 
+    - admin@arin.net
+    - sensu-plugin@sensu-plugins.io
     on_success: change
     on_failure: always
 script:
@@ -28,7 +32,7 @@ deploy:
     rvm: 2.1
     rvm: 2.2
     rvm: 2.3.0
-    repo: arineng/sensu-plugins-jolokia
-addons:
-    code_climate:
-          repo_token:
+    rvm: 2.4.1
+    repo: sensu-plugins/sensu-plugins-jolokia
+  api_key:
+    secure: TGSlzYjzJct/wrp0o70V6hIO6uSGDEwJYNI8AEHvMHyjPDgeB5J8HjYVALK3ifts0FFie2oWT/wXSUJSrAN3NfOfNiWs+QPbzqrFcDNO8o7ooVr3Pg0MSxJc/YyPLXCJsk1jcVJFcjLfNkdBzrBd66UJ+GD+sj0lnO5tCf71bkgEkeWIyxe2yi+9Q3qFoj3AiutXiSigqzx6lj3iC2SFt6277hHlM3osPKCI1r3w3woD/RXexmPLtBYi3l634/3xsiPZ9yt4kxyymlS57Gsd7Y3LNe3B0TdW6hY/R9PCrGPTxz/ZmYiZW5kiVbL1xqHjJdO455Ub9Q8shTLFe3umJcqHGFMigj2BLFyACVM280WuCWJ4TTCLBFt6u/NDaKGsC3J6YkMw/3cVSHNcqe8L889fxhnhRvVeuYW/hiX/Yeg0ycJHSyaRzIG70Hgb2FPpMBVnTq38/iHm8w2arTkaFTim4CuoQrhhvUvayorwWFnFXhNY8neQC28ctUW4sBMkfVyhOg5N3uBQ+s/tZBRdyeOuR3RAVzccqEwopgDDi9gwlnGYT8AN3f0/qqBs9H4NrosQHjTSpeNkn6jQNKQTj96ODV7r40hh+VOQycLKXhRo3ofBiHofqiQaNE/0Bh+AgfjNTc+DEMpVPnoYFhIqfgkjhzAa5P6lI92s0aJNnz4=
